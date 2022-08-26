@@ -1,0 +1,26 @@
+.text-align-center {
+    height: 100px;
+
+  
+    color: rgb(5, 5, 5);
+  
+    line-height: 100px;
+    text-align: center;
+    
+
+}
+.p {
+      
+    color: rgb(5, 5, 5);
+  
+    line-height: 100px;
+    text-align: center;
+
+}
+.divider:after,
+.divider:before {
+content: "";
+flex: 1;
+height: 1px;
+background: rgb(8, 8, 8);
+}
