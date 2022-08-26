@@ -15,9 +15,10 @@
 		$usuario->setClave($_POST['pas']);
 		if ($crud->buscarUsuario($_POST['usuario'])) {
 			$crud->insertar($usuario);
-			header('Location: home.php');
-		}else{
 			echo '<script language="javascript">alert("USUARIO O CONTRASEÑA INCORRECTOS");window.location.href="index.php"</script>';
+			
+		}else{
+			header('Location: home.php');
 
 		}		
 		
@@ -26,11 +27,10 @@
 		// si el id del objeto retornado no es null, quiere decir que encontro un registro en la base
 		if ($usuario->getIdusuario()!=NULL) {
 			$_SESSION['usuario']=$usuario; //si el usuario se encuentra, crea la sesión de usuario
-			
-			header('Location: home.php'); //va al Dashboard
-		}else{
 			echo '<script language="javascript">alert("USUARIO O CONTRASEÑA INCORRECTOS");window.location.href="index.php"</script>';
-
+			//va al Dashboard
+		}else{
+			header('Location: home.php');
 		}
 	}elseif(isset($_POST['salir'])){ // cuando presiona el botòn salir
 		header('Location: index.php');
